@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #77df77;
+    min-height: 100vh;
+    min-width: 100vh;
+    animation-name: albertanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: normal;
+}
+
+.red{
+    height: 10px;
+    background-color: #deb887;
+    border: 1px solid gray;
+    margin-top: 1px;
+}
+
+
+.green{
+    height: 10px;
+    background-color: #7fff00;
+    border: 1px solid gray;
+    margin-top: 1px;
+}
+
+/*animacion para los divs*/
+
+@keyframes albertanimation {
+
+    0% {
+        
+        transform: translateX(0);
+    }
+
+    100% {
+        
+        transform: translateX(100vh);
+    }
+}
+
+.board{
+    border: 1rem solid #C16936;
+    background-color: #EECBA0;
+    width: 100vw;
+    height: 100vw;
+    max-width: 800px;
+    max-height: 800px;
+    margin: auto;
+    padding: 2px;
+}
+
+.row{
+    display: flex;
+    height: 12.5%;
+}
+
+.cell{
+    width: 12.5%; /* 100/8  */
+    height: 100%;
+    border: 1px solid black;
+}
+
+.row:nth-child(odd) > .cell:nth-child(even),
+.row:nth-child(even) > .cell:nth-child(odd) {
+    background-color: #C16936;
+}
+
+
+input:checked ~ .board 
+input:checked ~ .board .cell {
+    transform: rotateZ(180deg);
+    transition: transform 2s linear;
+    /* opacity: 0;
+    transition: opacity 1s linear; */
+}
+
+input:not(checked) ~ .board 
+input:not(checked) ~ .board .cell {
+    transform: rotateZ(180deg);
+}

@@ -20,11 +20,11 @@
 //3. Crear una aplicación que solicite al usuario un número. Pintar tantos círculos como haya dicho el usuario.
 // Dentro del círculo se encontrará centrado el número del círculo que es. Los círculos empiezan por 1
 
-let a = parseInt(prompt('Introduce un número'));
+// let a = parseInt(prompt('Introduce un número'));
 
-for(let i=1; i<=a; i++){
-    document.write(`
-        <div class="circle">
-            ${i}
-        </div>`);
-}
+// for(let i=1; i<=a; i++){
+//     document.write(`
+//         <div class="circle">
+//             ${i}
+//         </div>`);
+// }
