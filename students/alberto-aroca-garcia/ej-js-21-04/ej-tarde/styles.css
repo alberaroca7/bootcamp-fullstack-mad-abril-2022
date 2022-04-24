@@ -88,3 +88,27 @@ input:not(checked) ~ .board
 input:not(checked) ~ .board .cell {
     transform: rotateZ(180deg);
 }
+
+
+.div_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+/* clase div impar */
+.div_properties_odd{ 
+    background-color: #1148F3;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+}
+
+/* clase div par */
+.div_properties_even{ 
+    background-color: #F47732;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+}
