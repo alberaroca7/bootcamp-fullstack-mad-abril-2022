@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 // paso 5. importar el componente donde queremos usarlo
 import HelloWorld from './components/hello-world';
@@ -11,12 +11,16 @@ import UserList from './components/user-list';
 import EventsExample from './components/events-example';
 import StateExample from './components/state-example';
 import DemoFetch from './components/demo-fetch';
+import DemoUseEffect from './components/demo-use-effect';
+import MultipleStates from './components/multiple-states';
+import MultipleFilters from './components/demo-multiple-filters';
+import DemoInterval from './components/demo-interval';
 
 import { user, users } from './data/user';
 
 function App() {
   const arr = ['Judith', 'Alberto', 'Marco', 'Laura', 'Jetza', 'Victor', 'Irene', 'Luis', 'Bryan'];
-  
+  const [renderInterval, updateRenderInterval] = useState(true);
   return (
     <React.Fragment>
       {/* <HelloWorld></HelloWorld>
@@ -33,7 +37,15 @@ function App() {
       {/* <UserList users={users.pepito}></UserList> */}
       {/* <EventsExample></EventsExample> */}
       {/* <StateExample></StateExample> */}
-      <DemoFetch></DemoFetch>
+      {/* <DemoFetch></DemoFetch> */}
+      {/* <DemoUseEffect></DemoUseEffect> */}
+      {/* <MultipleStates></MultipleStates> */}
+      {/* <MultipleStates status='Alive'></MultipleStates>
+      <MultipleStates status='Death'></MultipleStates>
+      <MultipleStates status='unknown'></MultipleStates> */}
+      {/* <MultipleFilters></MultipleFilters> */}
+      { renderInterval ? <DemoInterval></DemoInterval> : ''}
+      <button onClick={() => updateRenderInterval(false)}>Desmontar Interval</button>
     </React.Fragment>
   );
 }
